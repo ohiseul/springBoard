@@ -19,7 +19,7 @@ DROP TABLE FILEBOARD;
 DROP TABLE FILES;
 drop sequence FREEBOARDNUM_SEQ;
 drop sequence FILEBOARDNUM_SEQ;
-
+drop sequence FILESfileNo_SEQ;
 
 
 CREATE SEQUENCE FREEBOARDNUM_SEQ
@@ -67,7 +67,7 @@ CREATE TABLE FILES
     filepath       VARCHAR2(100)    NOT NULL, 
     REGDATE  DATE  NOT NULL, 
     num        NUMBER(5)         NOT NULL,
-    verified CHAR(1) CONSTRAINT booleantest_verified_CK CHECK(verified = '0' OR verified = '1')
+    DELETE_DATE DATE null
 );
 ----------------------------------------------    
 ALTER TABLE FILES ADD CONSTRAINT FILEBOARD
@@ -75,12 +75,6 @@ FOREIGN KEY (num) REFERENCES FILEBOARD(num);
 
 
 ---------------------------------------------
-
-
-INSERT INTO booleantest VALUES('codedragon', '코드드레곤', '0');
-
-INSERT INTO booleantest VALUES('butterfly', '나비', '1');
-
 
 INSERT INTO FREEBOARD
 SELECT
