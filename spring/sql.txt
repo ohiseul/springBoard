@@ -66,8 +66,7 @@ CREATE TABLE FILES
     filesize       NUMBER(11)       NOT NULL, 
     filepath       VARCHAR2(100)    NOT NULL, 
     REGDATE  DATE  NOT NULL, 
-    num        NUMBER(5)         NOT NULL,
-    verified CHAR(1) CONSTRAINT booleantest_verified_CK CHECK(verified = '0' OR verified = '1')
+    num        NUMBER(5)         NOT NULL
 );
 ----------------------------------------------    
 ALTER TABLE FILES ADD CONSTRAINT FILEBOARD
